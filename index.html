@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Sample App</title>
+    <link rel="shortcut icon" href="">
+    <script type="text/javascript" src="/node_modules/kaazing-enterprise-client/WebSocket.js"></script>
+    <script type="text/javascript">
+      function weatherResponse(obj){
+          console.log('weatherReponse');
+          let event = new CustomEvent('weather');
+          event.details = obj;
+          document.dispatchEvent(event);
+      }
+    </script>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 30px;
+        background:    #C9C7BB;
+        color:    #555;
+        font-family:  Tahoma, Arial, sans-serif;
+        font-size:    14px;
+        min-height: 200px;
+      }
+
+      #root{
+        width: 50%;
+        margin: auto;
+      }
+      .weatherWidgetTitle, .weatherWidgetInput, weatherWidgetBtn {
+        text-align: center;
+      }
+
+    </style>
+
+</head>
+<body>
+    <div id='root'></div>
+    <script src="static/bundle.js"></script>
+</body>
+</html>
